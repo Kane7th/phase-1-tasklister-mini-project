@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const taskList = document.getElementById("tasks");
 
   if (!form || !taskInput || !prioritySelect || !taskList) {
-      console.error("One or more elements not found. Check your HTML IDs.");
+      console.error("One or more elements not found");
       return;
   }
 
-  // Load tasks from LocalStorage on page load
+  // Load tasks from LocalStorage on page load  (help from AI as i still don't fully grasp this concept)
   loadTasks();
 
   form.addEventListener("submit", function (event) {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       saveTasks(); // Save task after adding
   });
 
-  // Save tasks to LocalStorage
+  // Save tasks to LocalStorage (help from AI as i still don't fully grasp this concept)
   function saveTasks() {
       const tasks = Array.from(taskList.children).map(li => ({
           text: li.querySelector("span").textContent,
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 
-  // Load tasks from LocalStorage
+  // Load tasks from LocalStorage  (help from AI as i still don't fully grasp this concept)
   function loadTasks() {
       const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
       savedTasks.forEach(task => {
